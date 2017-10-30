@@ -1,0 +1,11 @@
+skip_commits:
+  # Mimic Travis-ci skip behavior.
+  message: /ci skip/
+
+build_script:
+  - pip install cibuildwheel==0.6.0
+  - cibuildwheel --output-dir wheelhouse
+
+artifacts:
+  - path: "wheelhouse\\*.whl"
+    name: Wheels
