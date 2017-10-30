@@ -2,6 +2,10 @@ skip_commits:
   # Mimic Travis-ci skip behavior.
   message: /ci skip/
 
+environment:
+  BUILD_INSTALL_PREFIX: "C:\\usr\\local"
+  CIBW_SKIP: cp26-* cp27-* cp34-* cp35-*
+
 build_script:
   - pip install cibuildwheel==0.6.0
   - cibuildwheel --output-dir wheelhouse
